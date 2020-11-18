@@ -101,6 +101,11 @@ class AddressBook
         console.log(`\n First Name: ${this.firstName} ,Last Name : ${this.lastName} , Address : ${this.address}, ${this.city}  ${this.state}  ${this.zip}, Phone Number: ${this.phoneNumber},
         Email ID = ${this.emailId}`);
     }
+    /// Overriding the toString method
+    toString(){
+        return `\n First Name: ${this.firstName} ,Last Name : ${this.lastName} , Address : ${this.address}, ${this.city}  ${this.state}  ${this.zip}, Phone Number: ${this.phoneNumber},
+        Email ID = ${this.emailId}`;
+    }
 }
 /// Defining the address book instance with random details
 let addressBookList = [{firstName: "Raj", lastName: "Singh", address: "Sec-1", city: "Delhi", state: "Delhi", zip: 112012, phoneNumber: 9724512445, emailId: "raj@gmail.com"},
@@ -291,3 +296,7 @@ let cityCountMap= distinctCity.map(CountForCity);
 console.log("Displaying the count of contact in a city -->");
 /// Printing the array result of count for city map
 console.log(cityCountMap);
+/// UC11 -- Sorting the address book according to records first name
+/// Storing the alphabetically sorted array in an array as per sort helper function
+let alphabeticallySortedArrayByName = addressBookInArray.sort((a,b)=>a.firstName.localeCompare(b.firstName));
+console.log(sortedArray.toString());
