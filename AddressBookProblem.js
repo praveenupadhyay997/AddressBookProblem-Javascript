@@ -165,3 +165,15 @@ addressBookInArray.splice(indexOfContactForDelete, 1);
 /// Printing the contact details after deleting the detail
 console.log("Result after deleting the contact details -->");  
 console.log(addressBookInArray);
+
+/// UC6 --> Finding the number of contacts in the address book
+let countOfContacts = 0;
+function GetCount(addressBook)
+{
+    /// Increment the count of contacts if the element is not null
+   if(addressBook!=null)
+       ++countOfContacts;
+   return countOfContacts;
+}
+/// Using reduce function to count the number of details stored in the address book
+console.log("Total number of count of contacts in address book : " + addressBookInArray.reduce(GetCount, 1));
