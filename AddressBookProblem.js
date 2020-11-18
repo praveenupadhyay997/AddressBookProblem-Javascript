@@ -299,4 +299,18 @@ console.log(cityCountMap);
 /// UC11 -- Sorting the address book according to records first name
 /// Storing the alphabetically sorted array in an array as per sort helper function
 let alphabeticallySortedArrayByName = addressBookInArray.sort((a,b)=>a.firstName.localeCompare(b.firstName));
-console.log(sortedArray.toString());
+console.log("Displaying the list of contact sorted alphabetically by name -->");
+console.log(alphabeticallySortedArrayByName.toString());
+/// UC12 -- Sorting the address book according to state, city and zip
+/// Storing the alphabetically sorted array in an array as per sort helper function
+let sortedArrayByState = addressBookInArray.sort((a,b)=>a.state.localeCompare(b.state));
+console.log("Displaying the list of contact sorted alphabetically by state name -->");
+console.log(sortedArrayByState.toString());
+/// Storing the alphabetically sorted array in an array as per sort helper function
+let sortedArrayByCity = addressBookInArray.sort((a,b)=>a.city.localeCompare(b.city));
+console.log("Displaying the list of contact sorted alphabetically by city name -->");
+console.log(sortedArrayByCity.toString());
+/// Storing the numerically sorted array in an array as per sort helper function on basis of zip
+let sortedArrayByZip = addressBookInArray.sort((a,b)=>(a.zip>b.zip)?1:(b.zip>a.zip)?-1:0);
+console.log("Displaying the list of contact sorted numerically in ascending order by zip -->");
+console.log(sortedArrayByZip.toString());
