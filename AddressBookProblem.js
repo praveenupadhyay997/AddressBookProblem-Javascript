@@ -235,3 +235,59 @@ let addressStateMap= addressBookInArray.map(ReturnStateMap);
 console.log("Displaying the name of the contact and their state -->");
 /// Printing the array result of map
 console.log(addressStateMap);
+
+/// UC10 --> Get count of contact records by city or state
+function ReturnState(addressBook)
+{
+    return addressBook.state;
+}
+let state = addressBookInArray.map(ReturnState);
+let distinctState = [...new Set(state)];
+console.log(distinctState);
+/// Callback Function to return the count of the contact in the address book
+function CountForState(elementState)
+{
+    /// Initial counter for the contact detail iteration
+    let stateCounter = 0;
+    /// Incrementing the state counter for the distinct State
+    for(let i=0; i < addressStateMap.length; i++)
+    {
+        if(addressStateMap[i].includes(elementState))
+        ++stateCounter;
+    }
+    return elementState + "-->" + stateCounter;
+}
+/// Using the map helper function to get the count of contact in a state
+let stateCountMap= distinctState.map(CountForState);
+/// Displaying the array returned after the use of the map helper function
+console.log("Displaying the count of contact in a state -->");
+/// Printing the array result of count map
+console.log(stateCountMap);
+
+/// Count for city
+function ReturnCity(addressBook)
+{
+    return addressBook.city;
+}
+let cityList = addressBookInArray.map(ReturnCity);
+let distinctCity = [...new Set(cityList)];
+console.log(distinctCity);
+/// Callback Function to return the count of the contact in the address book
+function CountForCity(elementCity)
+{
+    /// Initial counter for the contact detail iteration
+    let cityCounter = 0;
+    /// Incrementing the city counter for the distinct city
+    for(let j=0; j < addressCityMap.length; j++)
+    {
+        if(addressCityMap[j].includes(elementCity))
+        ++cityCounter;
+    }
+    return elementCity + "-->" + cityCounter;
+}
+/// Using the map helper function to get the count of contact in a city
+let cityCountMap= distinctCity.map(CountForCity);
+/// Displaying the array returned after the use of the map helper function
+console.log("Displaying the count of contact in a city -->");
+/// Printing the array result of count for city map
+console.log(cityCountMap);
