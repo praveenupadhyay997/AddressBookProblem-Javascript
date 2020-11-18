@@ -135,7 +135,7 @@ for (let i =0; i<addressBookList.length; i++)
 function SearchName(addressBookDetail)
 {
     /// Check for the first name and then return the instance of the contact detail
-    if(addressbook.firstName=="Shubham") 
+    if(addressBookDetail.firstName=="Shubham") 
     return addressBookDetail;
 }
 /// Getting the object as result of the query
@@ -150,3 +150,18 @@ addressBookInArray[indexOfContact].zip = 125005;
 /// Printing the contact details after updating the detail
 console.log("Result after updating the contact details -->");  
 addressBookInArray[indexOfContact].DisplayContactDetails();
+
+/// UC5 --> Find the contact stored inside the address book and delete it from the address book array
+/// Getting the object as result of the query
+let searchResultForDelete = addressBookInArray.find(SearchName);
+/// Finding the index in the array so as to edit at that place
+let indexOfContactForDelete = addressBookInArray.indexOf(searchResultForDelete);
+/// Printing the contact details before updating the detail
+console.log("Result after searching -->");  
+addressBookInArray[indexOfContactForDelete].DisplayContactDetails();
+console.log(addressBookInArray[indexOfContactForDelete].firstName + " " + addressBookInArray[indexOfContactForDelete].lastName +" will be deleted...");
+/// Delete one element from the array at result Index
+addressBookInArray.splice(indexOfContactForDelete, 1);
+/// Printing the contact details after deleting the detail
+console.log("Result after deleting the contact details -->");  
+console.log(addressBookInArray);
