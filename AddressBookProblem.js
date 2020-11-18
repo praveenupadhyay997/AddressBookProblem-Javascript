@@ -211,3 +211,27 @@ let contactOfState =  addressBookInArray.filter(addressBook => addressBook.state
 console.log("Contacts for state are -->  ");
 /// Printing the retrieved contact using the member method of the address book
 contactOfState.forEach(contact => contact.DisplayContactDetails());
+
+/// UC9 --> Ability to get the name in the record of a particular state or city using map helper function from the address book array
+/// Returning a mapped element of an array containing string of city/state --> FirstName LastName
+function ReturnCityMap(addressBook)
+{
+    return addressBook.city + " --> " + addressBook.firstName + "  " + addressBook.lastName;
+}
+/// Using the map helper function to get the state or city with name of contact from the address book
+let addressCityMap= addressBookInArray.map(ReturnCityMap);
+/// Displaying the array returned after the use of the map helper function
+console.log("Displaying the name of the contact and their city -->");
+/// Printing the array result of map
+console.log(addressCityMap);
+/// Returning a mapped element of an array containing string of city/state --> FirstName LastName
+function ReturnStateMap(addressBook)
+{
+    return addressBook.state + " -> " + addressBook.firstName + "  " + addressBook.lastName;
+}
+/// Using the map helper function to get the state or city with name of contact from the address book
+let addressStateMap= addressBookInArray.map(ReturnStateMap);
+/// Displaying the array returned after the use of the map helper function
+console.log("Displaying the name of the contact and their state -->");
+/// Printing the array result of map
+console.log(addressStateMap);
