@@ -129,4 +129,24 @@ for (let i =0; i<addressBookList.length; i++)
     {
         console.log(error);
     }
-}                   
+}
+/// UC4 --> Searching an address book contact by using the firstname
+/// Taking input as every element of the array which is instance of object class address book
+function SearchName(addressBookDetail)
+{
+    /// Check for the first name and then return the instance of the contact detail
+    if(addressbook.firstName=="Shubham") 
+    return addressBookDetail;
+}
+/// Getting the object as result of the query
+let searchResult = addressBookInArray.find(SearchName);
+/// Finding the index in the array so as to edit at that place
+let indexOfContact = addressBookInArray.indexOf(searchResult);
+/// Printing the contact details before updating the detail
+console.log("Result after searching -->");  
+addressBookInArray[indexOfContact].DisplayContactDetails();
+/// Updating the contact details of the found contact
+addressBookInArray[indexOfContact].zip = 125005;
+/// Printing the contact details after updating the detail
+console.log("Result after updating the contact details -->");  
+addressBookInArray[indexOfContact].DisplayContactDetails();
