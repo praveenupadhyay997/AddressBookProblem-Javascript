@@ -177,3 +177,25 @@ function GetCount(addressBook)
 }
 /// Using reduce function to count the number of details stored in the address book
 console.log("Total number of count of contacts in address book : " + addressBookInArray.reduce(GetCount, 1));
+
+/// UC7 --> Check whether duplicate of a contact exists or not
+/// Initial counter for the contact detail iteration
+let count = 0;
+/// Callback Function to return the count of the contact in the address book
+function CheckForDuplicate(addressBook)
+{
+    /// Match condition for the first name of the contact details
+    /// Incrementing the count in case the contact is found
+    if(addressBook.firstName == "Tina")
+        ++count;
+    return count;
+}
+/// Using filter to check for the count of the contact present in the address book
+let countOfContactsForCheck = addressBookInArray.filter(CheckForDuplicate);
+/// Check for the specific condition and display the result associated with it
+if(count == 1)
+    console.log("No Duplicate entry for this Name.");
+else if(count>1)
+    console.log("Duplicate entry for this Name.")
+else
+    console.log("There is no entry for the name.")
