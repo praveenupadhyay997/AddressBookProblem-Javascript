@@ -196,6 +196,18 @@ let countOfContactsForCheck = addressBookInArray.filter(CheckForDuplicate);
 if(count == 1)
     console.log("No Duplicate entry for this Name.");
 else if(count>1)
-    console.log("Duplicate entry for this Name.")
+    console.log("Duplicate entry for this Name.");
 else
-    console.log("There is no entry for the name.")
+    console.log("There is no entry for the name.");
+
+/// UC8 --> Ability to check for the contact of a particular state or city
+/// Getting the contact records from the address book for city say "Delhi" using the filter helper function and arrow function
+let contactOfCity =  addressBookInArray.filter(addressBook => addressBook.city.includes("Delhi"));
+console.log("Contacts for city are -->  ");
+/// Printing the retrieved contact using the member method of the address book
+contactOfCity.forEach(contact => contact.DisplayContactDetails());
+/// Getting the contact records from the address book for state say "UttarPradesh" using the filter helper function and arrow function
+let contactOfState =  addressBookInArray.filter(addressBook => addressBook.state.includes("UttarPradesh"));
+console.log("Contacts for state are -->  ");
+/// Printing the retrieved contact using the member method of the address book
+contactOfState.forEach(contact => contact.DisplayContactDetails());
