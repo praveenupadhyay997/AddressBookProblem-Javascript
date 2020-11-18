@@ -86,7 +86,8 @@ class AddressBook
     }
     /// Getter and Setter for the emailId
     get emailId(){return this._emailId;}
-    set emailId(emailId){
+    set emailId(emailId)
+    {
         let emailRegex = RegExp('^[a-zA-Z0-9]+([+-_.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]{2})*$');
         if(emailRegex.test(emailId))
         this._emailId=emailId;
@@ -109,14 +110,23 @@ let addressBookList = [{firstName: "Raj", lastName: "Singh", address: "Sec-1", c
                        {firstName: "Shubham", lastName: "Sharma", address: "Sec-4", city: "Hisar", state: "Haryana", zip: 146112, phoneNumber: 7845412454, emailId: "shubham@gmail.com"},
                        {firstName: "Shardul", lastName: "Singh", address: "Sec-6", city: "Kurukshetra", state: "Haryana", zip: 136119, phoneNumber: 7206512454, emailId: "shardul@gmail.com"}];
 /// Storing this array objects in array of objects
+/// Declaring the array for the address book detail storage
 let addressBookInArray = new Array();
 /// Iterating through the object array
 for (let i =0; i<addressBookList.length; i++)
 {
-  /// Creating an instance of Address Book with data from the object
-  let addressDetails = new AddressBook(addressBookList[i].firstName, addressBookList[i].lastName, addressBookList[i].address, addressBookList[i].city, addressBookList[i].state, addressBookList[i].zip, addressBookList[i].phoneNumber, addressBookList[i].emailId);
-  /// Pushing the instance in an array
-  addressBookInArray.push(addressDetails);
-  /// Displaying the pushed contact using the method
-  addressBookInArray[i].DisplayContactDetails();
+    /// Keeping the contact addition of array in try catch as exception will srise in this only
+    try
+    {
+        /// Creating an instance of Address Book with data from the object
+        let addressDetails = new AddressBook(addressBookList[i].firstName, addressBookList[i].lastName, addressBookList[i].address, addressBookList[i].city, addressBookList[i].state, addressBookList[i].zip, addressBookList[i].phoneNumber, addressBookList[i].emailId);
+        /// Pushing the instance in an array
+        addressBookInArray.push(addressDetails);
+        /// Displaying the pushed contact using the method
+        addressBookInArray[i].DisplayContactDetails();
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
 }                   
